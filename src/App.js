@@ -21,6 +21,7 @@ function App() {
 
   const addTask = async()=>{
     try{
+      console.log("click");
       const response = await api.post('/tasks',{task: todoValue, isComplete: false});
       if(response.status === 200){
         console.log("Succese")
