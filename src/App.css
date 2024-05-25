@@ -22,9 +22,12 @@ h2{
 }
 
 .container {
-  max-width: 500px; 
+  width: 80%; 
+  max-height: 80vh;
+  overflow-y: auto;
   background: #fff;
-  margin: 137px auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 28px 20px 30px; 
   border-radius: 7px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
@@ -123,18 +126,30 @@ h2{
 }
 
 .todo-content {
-  display: flex;
-  align-items: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 두 줄로 제한 */
+  overflow: hidden;
+  text-overflow: ellipsis;
   flex-grow: 1;
   margin-right: 10px;
+  max-height: 3.6em; 
 }
 
 .todo-content input[type="text"] {
-  flex-grow: 1; 
-  font-size: 25px; 
-  padding: 5px; 
-  border: 1px solid lightblue; 
-  border-radius: 4px;  
+  flex-grow: 1;
+  font-size: 25px;
+  padding: 5px;
+  border: 1px solid lightblue;
+  border-radius: 4px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 두 줄로 제한 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3.6em; /* 두 줄 높이 설정 (1.8em * 2) */
+  width: 100%; /* 줄 바꿈을 적용하기 위해 너비를 설정 */
+  word-wrap: break-word; 
 }
 
 .todo-checkbox {
@@ -142,6 +157,10 @@ h2{
   height: 20px;
   margin-right: 20px;
   accent-color: #0d6efd; 
+}
+
+.todo-task{
+  width: 80%;
 }
 
 .todo-task:focus {
@@ -186,3 +205,63 @@ h2{
   background-color: gainsboro;
   color: white;
 }
+
+@media (max-width: 786px){
+  .container {
+    width: 90% !important;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+}
+
+
+@media (max-width: 468px){
+  .container {
+    width: 90% !important;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .input-box {
+    width: 80%;
+    margin: 0 0 10px 0;
+  }
+
+  .filter-buttons-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-buttons-col, .clear-button-col {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .filter-button, .button-clear {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .todo-item {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .todo-content {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .dropdown-container {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+
+
