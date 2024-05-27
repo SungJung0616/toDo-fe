@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 const Todopage = () => {
-    const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
   const [filter, setFilter] = useState('all');
 
