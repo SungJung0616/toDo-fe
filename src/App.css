@@ -282,4 +282,40 @@ h2{
   margin-bottom: 5px;
 }
 
+.navbar {
+  display: flex;
+  width: 80%; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: absolute; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  top: 50px;  
+  border-radius: 7px;  
+  align-items: center;
+  padding: 15px 20px;
+  background-color: white;
+  color: #0d6efd;
+ 
+}
 
+.navbar-home{
+  margin-left: 20px;
+}
+
+.navbar-buttons{
+  margin-right: 10px;
+  
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.navbar-logout{
+  background-color: white;
+  border: none;
+}
+
+.button-primary{
+  margin-right: 5px;
+}

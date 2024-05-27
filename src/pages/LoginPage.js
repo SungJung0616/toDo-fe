@@ -49,7 +49,7 @@ const LoginPage = () => {
             Login
           </Button>
           <span>
-             need Account? <Link to="/register"> Register</Link>
+            need Account? <Link to="/register"> Sign Up</Link>
           </span>
         </div>
       </Form>

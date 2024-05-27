@@ -16,7 +16,7 @@ const RegisterPage = () => {
     try{
       event.preventDefault();
       if(password !== repeatPassword){
-      throw new Error("Password is not match, try again")
+      throw new Error("Password does not match, try again!")
       }
       const response = await api.post('/user', {name, email, password});
       if(response.status === 200){
@@ -34,7 +34,7 @@ const RegisterPage = () => {
     <div className="display-center">
       
       <Form className="login-box" onSubmit={handleSubmit}>
-        <h1>Register</h1>
+        <h1>Sign UP</h1>
         <Form.Group className="mb-3" controlId="formName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="string" placeholder="Name" onChange={(event)=>{setName(event.target.value)}} />
@@ -51,7 +51,7 @@ const RegisterPage = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>re-enter the password</Form.Label>
+          <Form.Label>re-enter your password</Form.Label>
           <Form.Control type="password" placeholder="re-enter the password"onChange={(event)=>{setRepeatpassword(event.target.value)}} />
         </Form.Group>
 
