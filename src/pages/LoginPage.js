@@ -33,7 +33,7 @@ const LoginPage = () => {
   return (
     <div className="display-center">
       <Form className="login-box" onSubmit={handleLogin}>
-        <h1>로그인</h1>
+        <h1>Log In</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" onChange={(event)=>setEmail(event.target.value)}/>
@@ -49,7 +49,7 @@ const LoginPage = () => {
             Login
           </Button>
           <span>
-            계정이 없다면? <Link to="/register"> 회원가입 하기</Link>
+             need Account? <Link to="/register"> Register</Link>
           </span>
         </div>
       </Form>
