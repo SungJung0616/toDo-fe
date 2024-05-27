@@ -262,6 +262,26 @@ h2{
 
 }
 
+.login-box{
+  width: 80%; 
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  margin: auto; 
+  padding: 28px 20px 30px;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
 
+.error-message {
+  color: red;  
+  margin-bottom: 5px;
+}
 
-
+.button-primary{
+  margin-bottom: 10px;
+}
