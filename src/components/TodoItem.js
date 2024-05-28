@@ -43,7 +43,7 @@ const TodoItem = ({item, deleteTask, updateTask}) => {
               <span>{task}</span>
             )}
           </div>
-
+          <div className="author-box">by {item.author.name}</div>
           <div>
             <DropdownButton id="dropdown-basic-button" title="⋯">
               <Dropdown.Item onClick={() => setIsEditing(true)}>Edit</Dropdown.Item>

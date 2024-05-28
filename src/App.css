@@ -319,3 +319,9 @@ a{
 .button-primary{
   margin-right: 5px;
 }
+
+.author-box{
+  font-weight: normal;
+  font-size: small;
+  margin-right: 15px;
+}

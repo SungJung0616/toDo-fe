@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const token = sessionStorage.getItem('token');
+const Navbar = ({ user, setUser }) => {
+  const navigate = useNavigate();  
+ 
 
   const handleLogout = () => {
     sessionStorage.removeItem('token');
+    setUser(null);
     navigate('/login');
   };
 
@@ -16,12 +17,11 @@ const Navbar = () => {
     <nav className="navbar">
         <Link className="navbar-home" to="/">Home</Link>
         <div className="navbar-buttons">
-        {token ? (
+        {user ? (
           <button className="navbar-logout" onClick={handleLogout}>Logout</button>
         ) : (
           <>
-            <Link className="navbar-button" to="/login">Login /</Link>
-            
+            <Link className="navbar-button" to="/login">Login /</Link>            
             <Link className="navbar-button" to="/register"> Sign Up</Link>
           </>
         )}

@@ -2,21 +2,41 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./route/PrivateRoute";
 import Navbar from "./components/NavBar"
 import LoginPage from "./pages/LoginPage";
 import TodoPage from "./pages/TodoPage"
 import RegisterPage from "./pages/RegisterPage";
+import { useState, useEffect } from "react";
+import api from "./utils/api";
 
 
 function App() {
+    const [user, setUser] = useState();
+    const getUser = async () => {      
+      try{
+        const storedToken = sessionStorage.getItem('token');        
+        if(storedToken){
+          const response = await api.get("/user/me");
+          setUser(response.data.user);
+        }
+        
+      }catch(error){
+        setUser(null);
+      }
+    }
+
+    useEffect(()=>{
+      getUser();
+    },[])
+    
     return (  
      <div>
-      <Navbar />
+      <Navbar user={user} setUser={setUser}/>
       <Routes>
-        <Route path="/" element={<PrivateRoute><TodoPage /></PrivateRoute>} />
+        <Route path="/" element={<PrivateRoute user={user}><TodoPage /></PrivateRoute>} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage user={user} setUser={setUser} />} />
       </Routes> 
 
      </div>
