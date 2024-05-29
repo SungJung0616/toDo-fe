@@ -27,7 +27,6 @@ h2{
   overflow-y: auto;
   background: #fff;
   margin-top: 50px;
-  margin-bottom: 50px;
   padding: 28px 20px 30px; 
   border-radius: 7px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
@@ -128,7 +127,7 @@ h2{
 .todo-content {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* 두 줄로 제한 */
+  -webkit-line-clamp: 2; 
   overflow: hidden;
   text-overflow: ellipsis;
   flex-grow: 1;
@@ -144,11 +143,11 @@ h2{
   border-radius: 4px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* 두 줄로 제한 */
+  -webkit-line-clamp: 2; 
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 3.6em; /* 두 줄 높이 설정 (1.8em * 2) */
-  width: 100%; /* 줄 바꿈을 적용하기 위해 너비를 설정 */
+  max-height: 3.6em; 
+  width: 100%; 
   word-wrap: break-word; 
 }
 
@@ -209,7 +208,7 @@ h2{
 @media (max-width: 786px){
   .container {
     width: 90% !important;
-    margin: 20px auto;
+    margin-top: 50px;
     padding: 20px;
   }
 
@@ -219,7 +218,7 @@ h2{
 @media (max-width: 468px){
   .container {
     width: 90% !important;
-    margin: 20px auto;
+    margin-top: 50px;
     padding: 20px;
   }
 

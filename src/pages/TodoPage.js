@@ -6,15 +6,16 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-const Todopage = () => {
+const Todopage = ({user}) => {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
   const [filter, setFilter] = useState('all');
+  console.log('Todopage props:', { user });
 
   const getTasks = async()=>{
-      const response = await api.get('/tasks');
-      console.log("response : " , response);
-      setTodoList(response.data.data);      
+      const response = await api.get('/tasks');      
+      setTodoList(response.data.data);
+      
   }
 
   const addTask = async()=>{
@@ -107,6 +108,7 @@ const Todopage = () => {
       </Row>
 
       <TodoBoard 
+        user = {user}
         todoList = {filteredTasks} 
         deleteTask = {deleteTask}
         updateTask = {updateTask}

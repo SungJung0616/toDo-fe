@@ -10,12 +10,12 @@ const LoginPage = ({setUser, user}) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');  
   const navigate = useNavigate();
-
+  console.log('LoginPage props:', { user });
   const handleLogin = async(event) =>{
     event.preventDefault();
     try{
       const response = await api.post('/user/login',{email, password});
-      if(response.status === 200){
+      if(response.status === 200){        
         setUser(response.data.user);
         sessionStorage.setItem("token",response.data.token);
         api.defaults.headers["authorization"]= "Bearer " + response.data.token;

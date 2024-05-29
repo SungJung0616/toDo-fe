@@ -13,6 +13,7 @@ import api from "./utils/api";
 
 function App() {
     const [user, setUser] = useState();
+    
     const getUser = async () => {      
       try{
         const storedToken = sessionStorage.getItem('token');        
@@ -34,7 +35,7 @@ function App() {
      <div>
       <Navbar user={user} setUser={setUser}/>
       <Routes>
-        <Route path="/" element={<PrivateRoute user={user}><TodoPage /></PrivateRoute>} />
+        <Route path="/" element={<PrivateRoute user={user}><TodoPage/></PrivateRoute>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage user={user} setUser={setUser} />} />
       </Routes> 
