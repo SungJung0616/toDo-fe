@@ -93,7 +93,7 @@ const Todopage = ({user}) => {
             }}
           ></input>       
         <button className="button-add" onClick={addTask}>
-          <i className="fas fa-plus"></i>
+          +
         </button>
       </div>
       <Row className="filter-buttons-row">
